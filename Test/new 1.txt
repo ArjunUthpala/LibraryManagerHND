@@ -1,0 +1,46 @@
+CREATE TABLE `library_hnd61`.`book_reserve` ( `reserve_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT , `member_id` INT(10) UNSIGNED NULL DEFAULT NULL , `book_id` INT(10) UNSIGNED NULL DEFAULT NULL , `reserve_date` DATE NULL DEFAULT NULL , PRIMARY KEY (`reserve_id`)) ENGINE = InnoDB;
+
+<?php
+	}
+	else{
+?>
+<div class="container">
+<h3 align="center" class="my">Choose a book to reserve</h3>
+	<form action="../php/reserve_book_for_borrow.php" method="post">
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Book title:</label>
+				<div class="col-sm-10">
+				<select name="book_title" required>
+				<?php
+					require('../php/connection.php');
+					$sql="SELECT 'book_title' FROM `books` WHERE 'available'=1 AND `last_reserved_member` is NULL";
+					$result=$conn->query($sql);
+					while($row=mysqli_fetch_array($result)){
+						echo "<option>".$row['book_title']."</option>";
+					}
+				?>
+				</select>
+				</div>
+		</div>
+		<div>
+			<input type="submit" class="btn btn-info" style="margin:10px 10px 10px 0px" value="Reserved Book" name="reserve_book">
+		</div>
+	</form>
+</div>
+
+if(isset($_POST['find_reserve_book'])){
+require("../php/connection.php");
+	$sql="SELECT * FROM `books` WHERE `last_reserved_member`='$_POST[member_id]'";
+	$result=$conn->query($sql);
+	if(mysqli_num_rows($result)==1){// if reserved book found
+	$row=mysqli_fetch_assoc($result);
+	
+	
+	
+	if(isset($_POST['find_reserve_book'])){
+	require('../php/connection.php');
+	$sql="SELECT * FROM `books` WHERE `last_reserved_member`='$_POST[member_id]'";
+	$result=$conn->query($sql);
+	if(mysqli_num_rows($result)==1){
+		$row=mysqli_fetch_assoc($result);
+		print_r($row);

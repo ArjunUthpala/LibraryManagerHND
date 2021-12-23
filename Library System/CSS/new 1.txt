@@ -1,0 +1,39 @@
+<div class="" >
+          <div class="name" style="width: 90%">Hello, I'm Arjun Waththegedara</div>
+          <div class="myposition" >
+            & I'm currently a Software Engineering Undergraduate
+          </div>
+        </div>
+
+
+<div class="" >
+        <div class="">
+          
+          <div class="" style="width: 95%; ">
+            <div class="" >
+			  <div class="name" style="width: 90%">Hello, I'm Arjun Waththegedara</div>
+			  <div class="myposition" >
+				& I'm currently a Software Engineering Undergraduate
+			  </div>
+			</div>
+          </div>
+          <div style="width: auto; height: 100%; align-content: center">
+            <img
+          class="img"
+          src="./Photos/profpic.jpg"
+          alt="Profile pic"
+          style="
+            width: 400px;
+            height: 400px;
+
+            padding: 0.5cm 0.5cm 1cm;
+            padding: 0.5cm 0.5cm 1cm;
+            display: flex;
+
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+          </div>
+        </div>
+      </div>
